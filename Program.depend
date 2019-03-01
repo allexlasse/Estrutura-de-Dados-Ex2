@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1551465217 source:c:\users\allex\desktop\ads\3_ciclo\estrutura de dados\pilha\program\main.cpp
+	<iostream>
+	"pile_header.h"
+	<windows.h>
+
+1551465308 c:\users\allex\desktop\ads\3_ciclo\estrutura de dados\pilha\program\pile_header.h
+
