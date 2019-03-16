@@ -7,7 +7,7 @@ using std::string;
 struct Triangulo{
 
     unsigned int LadoA, LadoB, LadoC;
-    string tipo;
+
     //construtor
 
     Triangulo(){
@@ -39,13 +39,11 @@ struct Triangulo{
 
     string classificacao(){
         if(LadoA == LadoB && LadoA == LadoC)
-            tipo = "Equilatero";
+            return "Equilatero";
         else if(LadoA == LadoB || LadoA == LadoC || LadoB == LadoC)
-            tipo = "Isosceles";
+            return "Isosceles";
         else
-            tipo = "Escaleno";
-
-        return tipo;
+            return "Escaleno";
     }
 
 

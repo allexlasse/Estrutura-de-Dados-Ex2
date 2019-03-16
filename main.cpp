@@ -12,7 +12,7 @@ int main()
     bool exit = true;
     int option, pileSize, valor, lado1, lado2, lado3;
     Triangulo T;
-
+    cout<<"EXERCICIO: EMPILHAMENTO DE TRIANGULOS\n\n"<<endl;
     cout<<"Definir o tamanho da pilha: ";
     cin>>pileSize;
 
@@ -20,28 +20,34 @@ int main()
 
     while(exit){
         system("CLS");
-        cout<<"Tamanho maximo da pilha: "<<(p.Tamanho - 1)<<endl;
-        cout<<"Posicao do topo: "<<p.Topo<<endl;
-        cout<<"Informacoes sobre o triangulo no topo: "<<endl;
+        cout<<"                 MENU\n"<<endl;
+        cout<<"- Tamanho maximo da pilha: "<<(p.Tamanho)<<endl;
+        cout<<"- Posicao do topo: "<<p.Topo<<endl;
+        cout<<"- Informacoes sobre o triangulo no topo: ";
         if(p.Topo == -1){
             cout<<"Pilha vazia."<<endl;
         }
-        else if(T.isTriangulo()){
-            cout<<"\nTipo de triangulo: ";
-            cout<<T.classificacao();
-            cout<<"\nArea do triangulo: ";
-            cout<<T.areaDoTriangulo();
+        else if(p.ValorNoTopo().isTriangulo()){
+            cout<<"\n\n     - Tipo de triangulo: ";
+            cout<<p.ValorNoTopo().classificacao();
+            cout<<"\n     - Area do triangulo: ";
+            cout<<p.ValorNoTopo().areaDoTriangulo();
+            cout<<"\n     - Valores digitados: ";
+            cout<<p.ValorNoTopo().LadoA<<", "<<p.ValorNoTopo().LadoB<<", "<<p.ValorNoTopo().LadoC<<endl;
         }
         else{
             cout<<"Valor no topo nao e um triangulo."<<endl;
+            cout<<"- Valores digitados: ";
+            cout<<p.ValorNoTopo().LadoA<<", "<<p.ValorNoTopo().LadoB<<", "<<p.ValorNoTopo().LadoC<<endl;
         }
 
         cout<<"\n\n";
 
-        cout<<"Selecione uma opcao: "<<endl;
-        cout<<"1-Empilhar um triangulo\n2-Desempilhar\n0-SAIR"<<endl;
-        cout<<"Opcao: ";
+        cout<<"SELECIONE UMA OPCAO: "<<endl;
+        cout<<"\n1 - Empilhar um triangulo\n2 - Desempilhar\n0 - SAIR"<<endl;
+        cout<<"\nOpcao: ";
         cin>>option;
+        //cout<<"\n";
         switch(option){
         case 1:
             if(p.PilhaCheia()){
@@ -49,12 +55,12 @@ int main()
                 Sleep(1000); // Comando específico do windows
             }
             else{
-                cout<<"Entre com os lados do triangulo"<<endl;
-                cout<<"\nLado 1: ";
+                cout<<"Entre com os valores do triangulo"<<endl;
+                cout<<"Lado 1: ";
                 cin>>lado1;
-                cout<<"\nLado 2: ";
+                cout<<"Lado 2: ";
                 cin>>lado2;
-                cout<<"\nLado 3: ";
+                cout<<"Lado 3: ";
                 cin>>lado3;
                 T = Triangulo(lado1, lado2, lado3);
                 p.Empilhar(T);
@@ -78,7 +84,7 @@ int main()
 
         default:
             cout<<"Comando inválido. Retornando ao MENU.";
-            Sleep(3000); // Comando específico do windows
+            Sleep(1000); // Comando específico do windows
             break;
         }
     }

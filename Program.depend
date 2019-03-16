@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1552706938 source:c:\users\allex\desktop\ads\3_ciclo\estrutura de dados\pilha\program\main.cpp
+1552763811 source:c:\users\allex\desktop\ads\3_ciclo\estrutura de dados\pilha\program\main.cpp
 	<iostream>
 	"pile_header.h"
 	"triangulo.h"
@@ -8,7 +8,7 @@
 
 1551465423 c:\users\allex\desktop\ads\3_ciclo\estrutura de dados\pilha\program\pile_header.h
 
-1552705828 c:\users\allex\desktop\ads\3_ciclo\estrutura de dados\pilha\program\triangulo.h
+1552763665 c:\users\allex\desktop\ads\3_ciclo\estrutura de dados\pilha\program\triangulo.h
 	<math.h>
 	<string>
 
