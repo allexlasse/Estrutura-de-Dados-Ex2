@@ -1,5 +1,6 @@
 #include <iostream>
 #include "pile_header.h"
+#include "triangulo.h"
 #include <windows.h> // biblioteca de funções específicas do windows;
 #include <stdlib.h>
 
@@ -9,29 +10,36 @@ int main()
 {
 
     bool exit = true;
-    int option, pileSize, valor;
+    int option, pileSize, valor, lado1, lado2, lado3;
+    Triangulo T;
 
-    cout<<"Definir o tamanho: ";
+    cout<<"Definir o tamanho da pilha: ";
     cin>>pileSize;
 
-    Pilha<int> p(pileSize);
+    Pilha<Triangulo> p(pileSize);
 
     while(exit){
         system("CLS");
-        cout<<"Tamanho maximo da pilha: "<<p.Tamanho<<endl;
+        cout<<"Tamanho maximo da pilha: "<<(p.Tamanho - 1)<<endl;
         cout<<"Posicao do topo: "<<p.Topo<<endl;
-        cout<<"Valor no topo: ";
+        cout<<"Informacoes sobre o triangulo no topo: "<<endl;
         if(p.Topo == -1){
-            cout<<"Pilha vazia.";
+            cout<<"Pilha vazia."<<endl;
+        }
+        else if(T.isTriangulo()){
+            cout<<"\nTipo de triangulo: ";
+            cout<<T.classificacao();
+            cout<<"\nArea do triangulo: ";
+            cout<<T.areaDoTriangulo();
         }
         else{
-            cout<<p.ValorNoTopo();
+            cout<<"Valor no topo nao e um triangulo."<<endl;
         }
 
         cout<<"\n\n";
 
         cout<<"Selecione uma opcao: "<<endl;
-        cout<<"1-Empilhar\n2-Desempilhar\n0-SAIR"<<endl;
+        cout<<"1-Empilhar um triangulo\n2-Desempilhar\n0-SAIR"<<endl;
         cout<<"Opcao: ";
         cin>>option;
         switch(option){
@@ -41,9 +49,15 @@ int main()
                 Sleep(1000); // Comando específico do windows
             }
             else{
-                cout<<"Digite o valor: ";
-                cin>>valor;
-                p.Empilhar(valor);
+                cout<<"Entre com os lados do triangulo"<<endl;
+                cout<<"\nLado 1: ";
+                cin>>lado1;
+                cout<<"\nLado 2: ";
+                cin>>lado2;
+                cout<<"\nLado 3: ";
+                cin>>lado3;
+                T = Triangulo(lado1, lado2, lado3);
+                p.Empilhar(T);
             }
             break;
 
@@ -64,7 +78,7 @@ int main()
 
         default:
             cout<<"Comando inválido. Retornando ao MENU.";
-            Sleep(3000);
+            Sleep(3000); // Comando específico do windows
             break;
         }
     }

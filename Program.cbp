@@ -34,6 +34,9 @@
 		</Compiler>
 		<Unit filename="main.cpp" />
 		<Unit filename="pile_header.h" />
+		<Unit filename="triangulo.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />
